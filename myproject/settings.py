@@ -11,12 +11,13 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
-
+from dotenv import load_dotenv
 import os
+
+load_dotenv()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 # Define the path to the kubeconfig file
 KUBECONFIG_PATH = os.path.join(BASE_DIR, 'kubeconfig', 'config')
 
@@ -98,9 +99,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'postgres',
-        'USER': '',  # Note the format: username@servername
-        'PASSWORD': '',
-        'HOST': '',  # Server name from Azure
+        'USER': os.getenv('DB_USERNAME'),  # Note the format: username@servername
+        'PASSWORD': os.getenv('DB_PASSWORD'),
+        'HOST': os.getenv('DB_HOST'), # Server name from Azure
         'PORT': '5432',
         'OPTIONS': {
             'sslmode': 'require',  # Use SSL mode for secure connections
