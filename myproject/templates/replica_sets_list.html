@@ -1,0 +1,354 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Meta -->
+        <meta name="description" content="Vivo - Responsive Bootstrap 5 Dashboard Template">
+        <meta name="author" content="Bootstrap Gallery" />
+        <link rel="canonical" href="https://www.bootstrap.gallery/">
+        <meta property="og:url" content="https://www.bootstrap.gallery">
+        <meta property="og:title" content="Admin Templates - Dashboard Templates | Bootstrap Gallery">
+        <meta property="og:description" content="Marketplace for Bootstrap Admin Dashboards">
+        <meta property="og:type" content="Website">
+        <meta property="og:site_name" content="Bootstrap Gallery">
+        <link rel="shortcut icon" href="{% static 'images/favicon.svg' %}">
+
+        <!-- Title -->
+        <title>Replica Sets List</title>
+        
+
+
+        <!-- *************
+            ************ Common Css Files *************
+        ************ -->
+
+        <!-- Animated css -->
+        <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+
+        <!-- Bootstrap font icons css -->
+        <link rel="stylesheet" href="{% static 'fonts/bootstrap/bootstrap-icons.css' %}">
+
+        <!-- Main css -->
+        <link rel="stylesheet" href="{% static 'css/main.min.css' %}">
+
+
+        <!-- *************
+            ************ Vendor Css Files *************
+        ************ -->
+
+        <!-- Scrollbar CSS -->
+        <link rel="stylesheet" href="{% static 'vendor/overlay-scroll/OverlayScrollbars.min.css' %}">
+
+    </head>
+
+    <body>
+
+        <!-- Loading wrapper start -->
+        <!-- <div id="loading-wrapper">
+            <div class="spinner">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+                <div class="line4"></div>
+                <div class="line5"></div>
+                <div class="line6"></div>
+            </div>
+        </div> -->
+        <!-- Loading wrapper end -->
+
+        <!-- Page wrapper start -->
+        <div class="page-wrapper">
+
+            <!-- Sidebar wrapper start -->
+            <nav class="sidebar-wrapper">
+
+                <!-- Sidebar brand starts -->
+                <div class="sidebar-brand">
+                    <a href="{% url 'list_workloads' %}" class="logo">
+                        <img src="{% static 'images/logo.svg'%}" alt="Vivo Admin Dashboard" />
+                    </a>
+                </div>
+                <!-- Sidebar brand starts -->
+
+                <!-- Sidebar menu starts -->
+                <div class="sidebar-menu">
+                    <div class="sidebarMenuScroll">
+                        <ul>
+                            <li class="sidebar-dropdown">
+                                <a href="#">
+                                    <i class="bi bi-house"></i>
+                                    <span class="menu-text">Namespaces</span>
+                                </a>
+                                <div class="sidebar-submenu">
+                                    <ul>
+                                        <li>
+                                            <a href="{% url 'create_namespaces' %}">Create Namespaces</a>
+                                        </li>
+                                        <li>
+                                            <a href="{% url 'list_namespaces' %}">namespaces List</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            
+                            
+                            <li class="sidebar-dropdown">
+                                <a href="#">
+                                    <i class="bi bi-stickies"></i>
+                                    <span class="menu-text">Pods</span>
+                                </a>
+                                <div class="sidebar-submenu">
+                                    <ul>
+                                        <li>
+                                            <a href="{% url 'create_pods' %}">Create Pods</a>
+                                        </li>
+                                        
+                                        <li>
+                                            <a href="{% url 'list_pods' %}">Pods List</a>
+                                        </li>
+                                        
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="sidebar-dropdown">
+                                <a href="#">
+                                    <i class="bi bi-calendar4"></i>
+                                    <span class="menu-text">Deployment</span>
+                                </a>
+                                <div class="sidebar-submenu">
+                                    <ul>
+                                        <li>
+                                            <a href="{% url 'list_deployments' %}">Deployments List</a>
+                                        </li>
+                                             
+                                    </ul>
+                                </div>
+                                
+                            </li>
+                            <li class="sidebar-dropdown">
+                                <a href="#">
+                                    <i class="bi bi-calendar4"></i>
+                                    <span class="menu-text">Replica Sets</span>
+                                </a>
+                                <div class="sidebar-submenu">
+                                    <ul>
+                                        <li>
+                                            <a href="{% url 'list_replica_sets' %}">Replica Sets List</a>
+                                        </li>
+                                             
+                                    </ul>
+                                </div>
+                                
+                            </li>
+                            <li class="sidebar-dropdown">
+                                <a href="#">
+                                    <i class="bi bi-calendar4"></i>
+                                    <span class="menu-text">Yaml</span>
+                                </a>
+                                <div class="sidebar-submenu">
+                                    <ul>
+                                        <li>
+                                            <a href="{% url 'apply_yaml' %}">Yaml file</a>
+                                        </li>
+                                             
+                                    </ul>
+                                </div>
+                                
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+                <!-- Sidebar menu ends -->
+
+            </nav>
+            <!-- Sidebar wrapper end -->
+
+            <!-- *************
+                ************ Main container start *************
+            ************* -->
+            <div class="main-container">
+
+                <!-- Page header starts -->
+                <div class="page-header">
+
+                    <div class="toggle-sidebar" id="toggle-sidebar"><i class="bi bi-list"></i></div>
+
+                    <!-- Welcome start -->
+                    <div class="welcome-note">
+                        <b>Replica sets List</b>  
+                    </div>
+                    <!-- Welcome end -->
+
+                    <!-- Header actions ccontainer start -->
+                    <div class="header-actions-container">
+
+                        <!-- Search container start -->
+                        <div class="search-container">
+
+                            <!-- Search input group start -->
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search anything">
+                                <button class="btn" type="button">
+                                    <i class="bi bi-search"></i>
+                                </button>
+                            </div>
+                            <!-- Search input group end -->
+
+                        </div>
+                        <!-- Search container end -->
+
+                        <!-- Leads start -->
+                        <a href="orders.html" class="leads d-none d-xl-flex">
+                            <div class="lead-details">You have <span class="count"> 21 </span> new leads </div>
+                            <span class="lead-icon"><i
+                                    class="bi bi-bell-fill animate__animated animate__swing animate__infinite infinite"></i><b
+                                    class="dot animate__animated animate__heartBeat animate__infinite"></b></span>
+                        </a>
+                        <!-- Leads end -->
+
+                        <!-- Header actions start -->
+                        <ul class="header-actions">
+                            <li class="dropdown d-none d-md-block">
+                                <a href="#" id="countries" data-toggle="dropdown" aria-haspopup="true">
+                                    <img src="{% static 'images/flags/1x1/gb.svg' %}" class="flag-img" alt="AI Admin Dashboards" />
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end mini" aria-labelledby="countries">
+                                    <div class="country-container">
+                                        <a href="index.html">
+                                            <img src="{% static 'images/flags/1x1/us.svg' %}" alt="Clean Admin Dashboards" />
+                                        </a>
+                                        <a href="index.html">
+                                            <img src="{% static 'images/flags/1x1/in.svg' %}" alt="Google Dashboards" />
+                                        </a>
+                                        <a href="index.html">
+                                            <img src="{% static 'images/flags/1x1/br.svg' %}" alt="Admin Panels" />
+                                        </a>
+                                        <a href="index.html">
+                                            <img src="{% static 'images/flags/1x1/tr.svg' %}" alt="Modern Dashboards" />
+                                        </a>
+                                        <a href="index.html">
+                                            <img src="{% static 'images/flags/1x1/ca.svg' %}" alt="Best Admin Dashboards" />
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" id="userSettings" class="user-settings" data-toggle="dropdown" aria-haspopup="true">
+                                    <span class="user-name d-none d-md-block">Seif Osman</span>
+                                    <span class="avatar">
+                                        <img src="{% static 'images/seifosman.jpg' %}" alt="Admin Templates">
+                                        <span class="status online"></span>
+                                    </span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="userSettings">
+                                    <div class="header-profile-actions">
+                                        <a href="profile.html">Profile</a>
+                                        <a href="settings.html">Settings</a>
+                                        <a href="login.html">Logout</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <!-- Header actions end -->
+
+                    </div>
+                    <!-- Header actions ccontainer end -->
+
+                </div>
+                <!-- Page header ends -->
+
+                <!-- Content wrapper scroll start -->
+                <!-- Content wrapper scroll end -->
+				<div class="row">
+					<div class="col-sm-12 col-12">
+						<div class="card">
+							<div class="card-body">
+								<div class="row">
+									<div class="col-sm-12 col-12">
+		
+										<div class="card">
+											<div class="card-body">
+												<div class="table-responsive">
+													<table class="table m-0">
+														<thead>
+															<tr>
+																<th>Names</th>
+																<th>NameSpace</th>
+																<th> </th>
+															</tr>
+														</thead>
+														<tbody>
+															{% for rs in replica_sets_list %}
+															<tr>
+																<td>{{ rs.name }}</td>
+																<td>{{ rs.namespace }}</td>
+                                                                <td>
+                                                                    <div class="btn-group">
+                                                                        <button type="button" class="bi bi-three-dots-vertical" data-bs-toggle="dropdown"
+                                                                          aria-expanded="false" style="border: none; background: none;">
+                                                                          
+                                                                        </button>
+                                                                        <ul class="dropdown-menu">
+                                                                          <li><a class="dropdown-item" href="{% url 'edit_replica_set' rs.namespace rs.name %}">Edit</a></li>
+                                                                          <li><a class="dropdown-item" href="{% url 'delete_replica_set' rs.namespace rs.name %}">Delete</a></li>
+                                                                          
+                                                                        </ul>
+                                                                      </div>
+                                                                </td>
+															</tr>
+															{% endfor %}
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</div>
+		
+									</div>
+								</div>
+								<div class="card-320"></div>
+								
+							</div>
+							
+						</div>
+						
+					</div>
+					
+				</div>
+            </div>
+            <!-- *************
+                ************ Main container end *************
+            ************* -->
+
+        </div>
+        <!-- Page wrapper end -->
+
+        <!-- *************
+            ************ Required JavaScript Files *************
+        ************* -->
+        <!-- Required jQuery first, then Bootstrap Bundle JS -->
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'js/modernizr.js' %}"></script>
+        <script src="{% static 'js/moment.js' %}"></script>
+
+        <!-- *************
+            ************ Vendor Js Files *************
+        ************* -->
+
+        <!-- Overlay Scroll JS -->
+        <script src="{% static 'vendor/overlay-scroll/jquery.overlayScrollbars.min.js' %}"></script>
+        <script src="{% static 'vendor/overlay-scroll/custom-scrollbar.js' %}"></script>
+
+
+        <!-- Main Js Required -->
+        <script src="{% static 'js/main.js' %}"></script>
+
+    </body>
+
+</html>
